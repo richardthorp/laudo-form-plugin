@@ -1,0 +1,8 @@
+@mixin layout {
+  .container {
+    display: grid;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 2fr 3fr;
+    }
+  }
+}

@@ -25,8 +25,9 @@ $sidebar_heading_level = get_field('sidebar_heading_level');
 $sidebar_description = get_field('sidebar_description');
 $form_heading = get_field('form_heading');
 
+$block_classes = array("block", "laudo-form-block", "alignwide");
 ?>
-<section class="block laudo-form-block">
+<section <?= laudo_get_block_attrs($block, $block_classes) ?>>
   <div class="container">
     <div class="sidebar">
       <?php

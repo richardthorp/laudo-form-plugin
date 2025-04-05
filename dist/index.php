@@ -13,6 +13,9 @@ Author URI: https://richthorp-webdev.co.uk
 add_action('init', function () {
   $plugin_root = plugin_dir_path(__FILE__);
 
+  // Include helper functions
+  include_once($plugin_root . '/functions/helpers.php');
+
   // Add filter to Gravity forms plugin
   include_once($plugin_root . 'functions/gravity_forms.php');
 
@@ -23,5 +26,5 @@ add_action('init', function () {
   include_once($plugin_root . 'block-files/acf-fields.php');
 
   // Load Google fonts in site header
-  include_once($plugin_root.'functions/load_google_fonts.php');
+  include_once($plugin_root . 'functions/load_google_fonts.php');
 });
