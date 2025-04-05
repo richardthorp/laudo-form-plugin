@@ -1,0 +1,16 @@
+{
+  "name": "acf/laudo-form",
+  "title": "LAUDO form",
+  "description": "Select a form from available Gravity Forms",
+  "icon": "grid-view",
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "template.php"
+  },
+  "align": "full",
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "customClassName": true
+  }
+}
