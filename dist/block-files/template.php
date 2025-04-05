@@ -32,7 +32,7 @@ $block_classes = array("block", "laudo-form-block", "alignwide");
     <div class="sidebar">
       <?php
       if ($sidebar_heading) {
-        echo "<{$sidebar_heading_level} class='sidebar-heading'>";
+        echo "<{$sidebar_heading_level} class='sidebar-heading h1'>";
         echo $sidebar_heading;
         echo "</{$sidebar_heading_level}>";
       }

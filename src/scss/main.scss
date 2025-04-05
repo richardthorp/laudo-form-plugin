@@ -1,7 +1,7 @@
 @use 'typography' as typography;
-@use 'layout' as layout;
+@use 'block' as block;
 
 .block.laudo-form-block {
   @include typography.typography;
-  @include layout.layout;
+  @include block.block;
 }
