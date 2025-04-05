@@ -11,5 +11,10 @@ Author URI: https://richthorp-webdev.co.uk
 
 
 add_action('init', function () {
-  
+  $plugin_root = plugin_dir_path(__FILE__); 
+
+  // Gravity forms
+  include_once($plugin_root . '/functions/gravity_forms.php');
+
+
 });
