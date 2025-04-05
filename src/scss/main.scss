@@ -1,0 +1,5 @@
+@use 'typography' as typography;
+
+.block.laudo-form-block {
+  @include typography.typography-base;
+}

@@ -26,25 +26,26 @@ $sidebar_description = get_field('sidebar_description');
 $form_heading = get_field('form_heading');
 
 ?>
-
-<div class="container">
-  <div class="sidebar">
-    <?php
-    if ($sidebar_heading) {
-      echo "<{$sidebar_heading_level} class='sidebar-heading'>";
-      echo $sidebar_heading;
-      echo "</{$sidebar_heading_level}>";
-    }
-
-    echo $sidebar_description ? '<p class="sidebar-description">' . $sidebar_description . '</p>' : '';
-    ?>
+<section class="block laudo-form-block">
+  <div class="container">
+    <div class="sidebar">
+      <?php
+      if ($sidebar_heading) {
+        echo "<{$sidebar_heading_level} class='sidebar-heading'>";
+        echo $sidebar_heading;
+        echo "</{$sidebar_heading_level}>";
+      }
+  
+      echo $sidebar_description ? '<p class="sidebar-description">' . $sidebar_description . '</p>' : '';
+      ?>
+    </div>
+    <div class="form-content">
+      <?= $form_heading ? '<p class="form-heading">' . $form_heading . '</p>' : ''; ?>
+      <?php
+      // Output the selected form
+      // See https://docs.gravityforms.com/adding-a-form-to-the-theme-file/#h-basic-function-call
+      gravity_form($form_id, false, false, false, '', true);
+      ?>
+    </div>
   </div>
-  <div class="form-content">
-    <?= $form_heading ? '<p class="form-heading">' . $form_heading . '</p>' : ''; ?>
-    <?php
-    // Output the selected form
-    // See https://docs.gravityforms.com/adding-a-form-to-the-theme-file/#h-basic-function-call
-    gravity_form($form_id, false, false, false, '', true);
-    ?>
-  </div>
-</div>
+</section>

@@ -21,4 +21,7 @@ add_action('init', function () {
 
   // Add the custom fields
   include_once($plugin_root . 'block-files/acf-fields.php');
+
+  // Load Google fonts in site header
+  include_once($plugin_root.'functions/load_google_fonts.php');
 });
