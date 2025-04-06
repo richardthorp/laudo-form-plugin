@@ -53,6 +53,10 @@
           color: vars.$grey;
         }
 
+        textarea {
+          padding-bottom: 1rem;
+        }
+
         &.gfield--type-fileupload {
           position: relative;
           min-height: 3.5rem;
