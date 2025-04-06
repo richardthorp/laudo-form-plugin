@@ -105,7 +105,25 @@
         &.gfield--type-fileupload .gform-field-label:has(+ .ginput_container input[type="file"]:focus) {
           @include state.focus;
         }
+
+        // Error state
+        &.gfield_error {
+
+          input,
+          textarea,
+          &.gfield--type-fileupload .gform-field-label {
+            @include state.error;
+          }
+        }
       }
+    }
+
+    // Hide error messages and other form indicators
+    .gform_submission_error,
+    .gform_validation_errors,
+    .validation_message,
+    .gfield_fileupload_percent {
+      display: none;
     }
   }
 }
