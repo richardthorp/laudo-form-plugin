@@ -1,0 +1,61 @@
+@use 'variables' as vars;
+
+@mixin submit-button {
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+  min-width: 11rem;
+  min-height: 2.875rem;
+  background-color: vars.$black;
+  font-family: vars.$babas-neue;
+  text-transform: uppercase;
+  color: vars.$white;
+  font-size: 1.1rem;
+  padding-right: 1rem;
+  border-radius: 1000px;
+  position: relative;
+  border: 0;
+
+  @media screen and (min-width: vars.$br-md) {
+    min-height: 3.5rem;
+    min-width: 12rem;
+  }
+
+  &::after {
+    transition: background-color 0.15s ease-in;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    content: url(../img/arrow.svg);
+  }
+
+  &:hover {
+    background-color: vars.$blue-3;
+
+    &::after {
+      background-color: vars.$blue-5;
+    }
+  }
+
+  &:focus {
+    outline: 0;
+    background-color: vars.$blue-6;
+
+    &::after {
+      background-color: vars.$blue-4;
+    }
+  }
+
+  &:active {
+    background-color: vars.$blue-8;
+
+    &::after {
+      background-color: vars.$blue-7;
+    }
+  }
+}
