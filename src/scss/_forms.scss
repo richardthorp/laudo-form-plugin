@@ -9,7 +9,9 @@
       display: grid;
       gap: 0.5rem;
       grid-template-columns: repeat(12, 1fr);
-
+      @media screen and (min-width: vars.$br-lg) {
+        gap: 1rem;
+      }
       .gfield {
         position: relative;
         width: 100%;
@@ -51,6 +53,9 @@
           padding: 1.8rem 1rem 0.3rem;
           font-size: 1.1rem;
           color: vars.$grey;
+          @media screen and (min-width: vars.$br-lg) {
+            padding-bottom: 0.5rem;
+          }
         }
 
         textarea {
@@ -80,7 +85,7 @@
           &::after {
             position: absolute;
             right: 1rem;
-            top: 1.7rem;
+            top: 1.6rem;
             content: url(../img/file-upload-icon.svg);
             pointer-events: none;
           }
@@ -90,7 +95,7 @@
             position: relative;
             display: block;
             word-wrap: break-word;
-            padding: 1.8rem 3rem 0.3rem 1rem;
+            padding: 1.5rem 3rem 0.3rem 1rem;
             font-size: 1.1rem;
             color: vars.$grey;
             font-family: vars.$pt-narrow;

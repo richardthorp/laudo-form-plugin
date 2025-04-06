@@ -61,7 +61,7 @@
 
     // ----------------------------------- Form content
     .form-content {
-      background-color: vars.$light-blue;
+      background-color: vars.$blue-2;
       border-radius: 1rem;
       padding: 2rem 1rem;
       min-width: 0;
@@ -85,6 +85,7 @@
   
         @media screen and (min-width: vars.$br-lg) {
           font-size: 3.4rem;
+          margin-bottom: 2rem;
         }
       }
     }
