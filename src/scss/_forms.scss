@@ -1,60 +1,110 @@
 @use 'variables' as vars;
+@use 'input-states' as state;
+
+
 @mixin forms {
   .gform_wrapper {
     .gform_fields {
       display: grid;
       gap: 0.5rem;
-      @media screen and (min-width: vars.$br-lg) {
-        grid-template-columns: repeat(12, 1fr);
-      }
+      grid-template-columns: repeat(12, 1fr);
+
       .gfield {
         position: relative;
         width: 100%;
+        font-size: 1.1rem;
+
         &.gfield--width-full {
           grid-column: span 12;
         }
 
         &.gfield--width-half {
+          grid-column: span 12;
+
           @media screen and (min-width: vars.$br-lg) {
             grid-column: span 6;
           }
         }
-    
+
         .gform-field-label {
           position: absolute;
           top: 0.4rem;
           left: 1rem;
           font-size: 0.8rem;
-    
+
           .gfield_required {
             display: none;
           }
         }
 
+        input,
+        textarea,
+        &.gfield--type-fileupload .gform-field-label {
+          background-color: vars.$white;
+          border-radius: 0.5rem;
+          width: 100%;
+        }
+
         input, textarea {
           border: none;
           padding: 1.8rem 1rem 0.3rem;
-          width: 100%;
-          background-color: vars.$white;
-          color: vars.$grey;
-          border-radius: 0.5rem;
           font-size: 1.1rem;
         }
-    
-        // input {
-          // border: none;
-          // padding: 1.8rem 1rem 0.5rem;
-          // width: 100%;
-          // background-color: vars.$white;
-          // color: vars.$grey;
-          // border-radius: 0.5rem;
-          // font-size: 1.2rem;
-        // }
-    
-        // textarea {
-        //   border: none;
-        //   max-width: 100%;
-        // }
+
+        &.gfield--type-fileupload {
+          position: relative;
+          height: 3.5rem;
+
+          .gform-field-label {
+            border-radius: 0.5rem;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding: 0.4rem 0 0 1rem;
+          }
+
+          input, .gform_fileupload_rules {
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            position: absolute;
+          }
+
+          &::after {
+            position: absolute;
+            right: 1rem;
+            top: 1.7rem;
+            content: url(../img/file-upload-icon.svg);
+            pointer-events: none;
+          }
+        }
+
+        // Input states
+        input,
+        textarea,
+        &.gfield--type-fileupload .gform-field-label {
+          &:hover {
+            @include state.hover;
+          }
+
+          &:focus {
+            @include state.focus;
+          }
+
+          &:active {
+            @include state.active;
+          }
+        }
+
+        // Handle the file upload state differently as the styles need to be aplied to the label
+        // where its siblings input is in a certain state
+        &.gfield--type-fileupload .gform-field-label:has(+ .ginput_container input[type="file"]:active) {
+          @include state.active
+        }
+
+        &.gfield--type-fileupload .gform-field-label:has(+ .ginput_container input[type="file"]:focus) {
+          @include state.focus;
+        }
       }
     }
   }

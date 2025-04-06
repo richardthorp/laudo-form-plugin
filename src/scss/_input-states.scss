@@ -1,0 +1,19 @@
+@use 'variables' as vars;
+
+@mixin focus {
+  outline: 2px solid vars.$blue;
+  background-color: vars.$pale-blue;
+}
+
+@mixin hover {
+  outline: 2px solid vars.$blue;
+}
+
+@mixin active {
+  outline: 2px solid vars.$dark-blue;
+}
+
+@mixin error {
+  outline: 2px solid vars.$red;
+  background-color: vars.$pale-red;
+}
