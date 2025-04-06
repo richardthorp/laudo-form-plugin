@@ -80,6 +80,7 @@
             width: 0.1px;
             height: 0.1px;
             position: absolute;
+            pointer-events: none;
           }
 
           &::after {
@@ -141,6 +142,13 @@
         }
       }
     }
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      @include buttons.submit-button;
+      @media screen and (min-width: vars.$br-lg) {
+        margin-top: 1.5rem;
+      }
+    }
 
     // Hide error messages and other form indicators
     .gform_submission_error,
@@ -148,10 +156,6 @@
     .validation_message,
     .gfield_fileupload_percent {
       display: none;
-    }
-    button[type="submit"] {
-      margin-top: 0.5rem;
-      @include buttons.submit-button;
     }
   }
 }

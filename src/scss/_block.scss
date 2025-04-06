@@ -20,7 +20,7 @@
 
     @media screen and (min-width: vars.$br-xl) {
       flex-direction: row;
-      gap: 0 4rem;
+      // gap: 0 4rem;
     }
 
     // ----------------------------------- Sidebar
@@ -43,6 +43,7 @@
 
         @media screen and (min-width: vars.$br-lg) {
           font-size: 6rem;
+          margin-bottom: 1.5rem;
         }
 
         @media screen and (min-width: vars.$br-xl) {
