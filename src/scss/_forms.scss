@@ -1,5 +1,6 @@
 @use 'variables' as vars;
 @use 'input-states' as state;
+@use 'buttons' as buttons;
 
 
 @mixin forms {
@@ -49,11 +50,12 @@
           border: none;
           padding: 1.8rem 1rem 0.3rem;
           font-size: 1.1rem;
+          color: vars.$grey;
         }
 
         &.gfield--type-fileupload {
           position: relative;
-          height: 3.5rem;
+          min-height: 3.5rem;
 
           .gform-field-label {
             border-radius: 0.5rem;
@@ -63,6 +65,7 @@
             padding: 0.4rem 0 0 1rem;
           }
 
+          // Hide but don't remove the max upload rules
           input, .gform_fileupload_rules {
             opacity: 0;
             width: 0.1px;
@@ -76,6 +79,18 @@
             top: 1.7rem;
             content: url(../img/file-upload-icon.svg);
             pointer-events: none;
+          }
+
+          // Uploaded file name
+          .file-name {
+            position: relative;
+            display: block;
+            word-wrap: break-word;
+            padding: 1.8rem 3rem 0.3rem 1rem;
+            font-size: 1.1rem;
+            color: vars.$grey;
+            font-family: vars.$pt-narrow;
+
           }
         }
 
@@ -124,6 +139,10 @@
     .validation_message,
     .gfield_fileupload_percent {
       display: none;
+    }
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      @include buttons.submit-button;
     }
   }
 }

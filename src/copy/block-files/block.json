@@ -4,6 +4,7 @@
   "description": "Select a form from available Gravity Forms",
   "icon": "forms",
   "style": [ "file:../css/main.min.css" ],
+  "script": "file:../js/main.min.js",
   "acf": {
     "mode": "auto",
     "renderTemplate": "template.php"
