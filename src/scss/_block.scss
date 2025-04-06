@@ -1,3 +1,5 @@
+@use 'variables' as vars;
+
 @mixin block {
   .container {
     margin: 3rem 0;
@@ -5,24 +7,24 @@
     flex-direction: column;
     gap: 4rem 0;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: vars.$br-md) {
       flex-direction: row;
       gap: 0 3rem;
       margin: 5rem 0;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: vars.$br-xl) {
       flex-direction: row;
       gap: 0 4rem;
     }
 
     // ----------------------------------- Sidebar
     .sidebar {
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: vars.$br-md) {
         width: 33%;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: vars.$br-xl) {
         width: 40%;
       }
 
@@ -30,15 +32,15 @@
         font-size: 3.5rem;
         margin: 0 0 1.3rem 0;
 
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: vars.$br-md) {
           font-size: 5rem;
         }
 
-        @media screen and (min-width: 992px) {
+        @media screen and (min-width: vars.$br-lg) {
           font-size: 6rem;
         }
 
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: vars.$br-xl) {
           font-size: 9.4rem;
         }
       }
@@ -46,7 +48,7 @@
       .sidebar-description {
         line-height: 1.35;
         margin: 0;
-        @media screen and (min-width: 1200px) {
+        @media screen and (min-width: vars.$br-xl) {
           font-size: 1.1rem;
         }
       }
@@ -54,16 +56,16 @@
 
     // ----------------------------------- Form content
     .form-content {
-      background-color: #D5EEFF;
+      background-color: vars.$light-blue;
       border-radius: 1rem;
       padding: 2rem 1rem;
       min-width: 0;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: vars.$br-md) {
         flex-grow: 1;
       }
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: vars.$br-lg) {
         padding: 3rem 2.5rem;
       }
 
@@ -72,11 +74,11 @@
         font-family: "Bebas Neue", sans-serif;
         font-size: 2rem;
         line-height: 1;
-        @media screen and (min-width: 768px) {
+        @media screen and (min-width: vars.$br-md) {
           font-size: 2.5rem;
         }
   
-        @media screen and (min-width: 992px) {
+        @media screen and (min-width: vars.$br-lg) {
           font-size: 3.4rem;
         }
       }
