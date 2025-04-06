@@ -1,0 +1,61 @@
+@use 'variables' as vars;
+@mixin forms {
+  .gform_wrapper {
+    .gform_fields {
+      display: grid;
+      gap: 0.5rem;
+      @media screen and (min-width: vars.$br-lg) {
+        grid-template-columns: repeat(12, 1fr);
+      }
+      .gfield {
+        position: relative;
+        width: 100%;
+        &.gfield--width-full {
+          grid-column: span 12;
+        }
+
+        &.gfield--width-half {
+          @media screen and (min-width: vars.$br-lg) {
+            grid-column: span 6;
+          }
+        }
+    
+        .gform-field-label {
+          position: absolute;
+          top: 0.4rem;
+          left: 1rem;
+          font-size: 0.8rem;
+    
+          .gfield_required {
+            display: none;
+          }
+        }
+
+        input, textarea {
+          border: none;
+          padding: 1.8rem 1rem 0.3rem;
+          width: 100%;
+          background-color: vars.$white;
+          color: vars.$grey;
+          border-radius: 0.5rem;
+          font-size: 1.1rem;
+        }
+    
+        // input {
+          // border: none;
+          // padding: 1.8rem 1rem 0.5rem;
+          // width: 100%;
+          // background-color: vars.$white;
+          // color: vars.$grey;
+          // border-radius: 0.5rem;
+          // font-size: 1.2rem;
+        // }
+    
+        // textarea {
+        //   border: none;
+        //   max-width: 100%;
+        // }
+      }
+    }
+  }
+}

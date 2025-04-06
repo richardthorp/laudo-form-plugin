@@ -1,6 +1,11 @@
 @use 'variables' as vars;
 
 @mixin block {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   .container {
     margin: 3rem 0;
     display: flex;
