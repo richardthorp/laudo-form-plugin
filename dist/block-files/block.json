@@ -5,6 +5,7 @@
   "icon": "forms",
   "style": [ "file:../css/main.min.css" ],
   "script": "file:../js/main.min.js",
+  "editorStyle": "file:../css/editor.min.css",
   "acf": {
     "mode": "auto",
     "renderTemplate": "template.php"

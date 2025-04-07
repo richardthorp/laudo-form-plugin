@@ -1,0 +1,23 @@
+@use 'variables' as vars;
+// Make adjustments to editor block styles
+.block.laudo-form-block {
+  .container {
+    .sidebar {
+      .sidebar-heading {
+        @media screen and (min-width:vars.$br-md) {
+          font-size: 4rem;
+        }
+      }
+    }
+    .form-content {
+      @media screen and (min-width:vars.$br-lg) {
+        padding: 2rem 1rem;
+      }
+      .form-heading {
+        @media screen and (min-width:vars.$br-lg) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  } 
+}
