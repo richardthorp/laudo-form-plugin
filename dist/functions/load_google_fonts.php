@@ -10,3 +10,4 @@ function laudo_load_google_fonts() {
 }
 
 add_action( 'wp_head', 'laudo_load_google_fonts' );
+add_action( 'admin_enqueue_scripts', 'laudo_load_google_fonts' );
