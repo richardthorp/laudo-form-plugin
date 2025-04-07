@@ -23,7 +23,7 @@ add_action('init', function () {
   register_block_type($plugin_root . 'block-files');
 
   // Add the custom fields
-  include_once($plugin_root . 'block-files/acf-fields.php');
+  include_once($plugin_root . 'block-files/acf_fields.php');
 
   // Load Google fonts in site header
   include_once($plugin_root . 'functions/load_google_fonts.php');
