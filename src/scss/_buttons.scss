@@ -21,6 +21,7 @@
   }
 
   &::after {
+    content: '';
     transition: background-color 0.15s ease-in-out;
     border-radius: 50%;
     display: flex;
@@ -31,7 +32,9 @@
     position: absolute;
     top: 0;
     right: -1px;
-    content: url(../img/arrow.svg);
+    background-position: 50% 47%;
+    background-repeat: no-repeat;
+    background-image: url(../img/arrow.svg);;
   }
 
   &:hover {
