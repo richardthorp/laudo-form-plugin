@@ -2,7 +2,7 @@
 
 @mixin submit-button {
   cursor: pointer;
-  transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in-out;
   min-width: 11rem;
   min-height: 2.875rem;
   background-color: vars.$black;
@@ -21,7 +21,7 @@
   }
 
   &::after {
-    transition: background-color 0.15s ease-in;
+    transition: background-color 0.15s ease-in-out;
     border-radius: 50%;
     display: flex;
     align-items: center;
